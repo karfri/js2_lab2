@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--[if lte IE 6]><html class="preIE7 preIE8 preIE9"><![endif]-->
+<!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
+<!--[if IE 8]><html class="preIE9"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>title</title>
+  <link rel="stylesheet" href="lab1.css" type="text/css">
+
+  <script src="https://use.fontawesome.com/3cdd4eeb18.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD_eH_aYFdqj0Z8Ed7_X4QhX21a9N6UjY8",
+    authDomain: "lab2-a38cd.firebaseapp.com",
+    databaseURL: "https://lab2-a38cd.firebaseio.com",
+    projectId: "lab2-a38cd",
+    storageBucket: "lab2-a38cd.appspot.com",
+    messagingSenderId: "979207289004"
+  };
+  firebase.initializeApp(config);
+</script>
+</head>
+<body>
+  <div id="loginPopOver">
+    <div id="userName">
+      <label for="#name">User name: <input type="text" id="name" disabled></label>
+      <!-- <label for="#remember"><input type="checkbox" id="remember" disabled> Don't remember my name</label> -->
+    </div>
+    <div id="buttondiv">
+      <button type="button" id="gitlog"><span class="fa fa-github fa-3x"></span><p>Log In</p></button>
+    </div>
+  </div>
+  <script src="lab2.js"></script>
+</body>
+</html>
