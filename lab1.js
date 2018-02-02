@@ -110,7 +110,7 @@ function scrollToBottom(){
   /* LOG OUT eller GLÖMMA BORT NAMNET */
   logOut.addEventListener('click', function(){
     localStorage.removeItem('user');
-    window.location = 'lab2.html';
+    window.location = 'index.html';
   });
 
 

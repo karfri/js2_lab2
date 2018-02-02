@@ -14,7 +14,7 @@ var callback = function(){
       window.localStorage.setItem('user', dataString);
       prompt('Please wait, you are being redirected.');
       setTimeout(function(){
-        window.location = "http://localhost:8000/Documents/FEU17/JS2/lab2/lab2_chat.html";
+        window.location = "lab2_chat.html";
       }, 3000);
     }).catch(function(error){
       prompt('Something went wrong. Try to reload the page');
