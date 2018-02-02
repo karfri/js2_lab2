@@ -12,12 +12,12 @@ var callback = function(){
       const user = {name: username}; // WE USE THIS CONST TO GET THE USERNAME WITH USER.NAME
       let dataString = JSON.stringify( user );
       window.localStorage.setItem('user', dataString);
-      prompt('Please wait, you are being redirected.');
+      alert('Please wait, you are being redirected.');
       setTimeout(function(){
         window.location = "lab2_chat.html";
       }, 3000);
     }).catch(function(error){
-      prompt('Something went wrong. Try to reload the page');
+      alert('Something went wrong. Try to reload the page');
     });
 
   });
