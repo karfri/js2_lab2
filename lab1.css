@@ -98,6 +98,7 @@ main{
   border-radius:20px;
   font-family: 'Josefin Sans', sans-serif;
 }
+
 #userName{
   display:flex;
   flex-direction: column;
