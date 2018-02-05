@@ -108,17 +108,23 @@ function scrollToBottom(){
 }
 
 /*Display profilpic and username in the right corner*/
-/*
-        let userInfo = document.getElementById('userInfo');
-
-          let img = document.createElement('img');
-          let user = JSON.parse(data[key]);
-          let name = user.name;
-          let pic = user.profilepic;
-          img.src = pic;
-          userInfo.appendChild(img);
-          userInfo.innerHTML += name;*/
-
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    var user = firebase.auth().currentUser;
+    if (user != null) {
+      user.providerData.forEach(function (profile) {
+      let userInfo = document.getElementById('userInfo');
+      let pic = document.createElement("img");
+      pic.src = profile.photoURL;
+      userInfo.appendChild(pic);
+      userInfo.innerHTML += profile.displayName;
+    });
+  }
+    // User is signed in.
+  } else {
+    // No user is signed in.
+  }
+});
 
 
 
