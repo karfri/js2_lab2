@@ -4,14 +4,17 @@ var callback = function(){
   gitlog.addEventListener('click',function(){
     // Ett objekt för att hantera GitHub-autentisering
     let provider = new firebase.auth.GithubAuthProvider();
+    let db = firebase.database();
     // Skapa ett Promise som visar ett popup-fönster
     // Obs! Kontrollera att fönstret inte blockeras av en ad blocker
     firebase.auth().signInWithPopup(provider)
     .then(function(result) {
       let username = result.additionalUserInfo.profile.name;
-      const user = {name: username}; // WE USE THIS CONST TO GET THE USERNAME WITH USER.NAME
+      let pic = result.user.photoURL;
+      const user = {name: username, profilepic: pic}; // WE USE THIS CONST TO GET THE USERNAME WITH USER.NAME
       let dataString = JSON.stringify( user );
       window.localStorage.setItem('user', dataString);
+      db.ref('users/').push(dataString);
       alert('Please wait, you are being redirected.');
       setTimeout(function(){
         window.location = "lab2_chat.html";
@@ -20,6 +23,8 @@ var callback = function(){
       alert('Something went wrong. Try to reload the page');
     });
   });
+
+
 
   /*Log out message*/
   if(document.referrer === "http://localhost:8000/js2_lab2/lab2_chat.html"){

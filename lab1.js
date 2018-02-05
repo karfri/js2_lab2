@@ -44,6 +44,7 @@ var callback = function(){
       console.log(message);
       console.log(name);
 
+
       let object = {  // exempel objekt
         name: name,
         message: message,
@@ -105,6 +106,26 @@ function scrollToBottom(){
   let chat = document.getElementById('messages');
    chat.scrollTop = chat.scrollHeight - chat.clientHeight;
 }
+
+/*Display profilpic and username*/
+firebase.database().ref('users/').once('value', function(snapshot) {
+				let data = snapshot.val();
+        let usersonline = document.getElementById('users');
+        for( let key in data ) {
+          let userDiv = document.createElement('div');
+          let img = document.createElement('img');
+          let user = JSON.parse(data[key]);
+          let name = user.name;
+          let pic = user.profilepic;
+          img.src = pic;
+          userDiv.appendChild(img);
+          userDiv.innerHTML += name;
+          usersonline.appendChild(userDiv);
+        }
+});
+
+
+
 
 
   /* LOG OUT eller GLÖMMA BORT NAMNET */
