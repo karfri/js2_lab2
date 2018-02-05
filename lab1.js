@@ -4,7 +4,7 @@ var callback = function(){
   /******** ALEJANDROS SPACE */
 
   let chatWindow = document.getElementById('chatWindow');
-  let logOut = document.getElementById('logOut');
+  //let logOut = document.getElementById('logOut');
 
 
   // Man klickar på Send Message, skapas ett objekt som skickas till databasen:
@@ -108,15 +108,22 @@ function scrollToBottom(){
 
 
   /* LOG OUT eller GLÖMMA BORT NAMNET */
-  logOut.addEventListener('click', function(){
+  /*logOut.addEventListener('click', function(){
     localStorage.removeItem('user');
     window.location = 'index.html';
-  });
+  });*/
+  let logOut = document.getElementById('logOut');
+    logOut.addEventListener('click', function(){
+      firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+        console.log("Success")
+        window.location = "index.html";
+      }).catch(function(error) {
+          // An error happened.
+          console.log("Sorry, an error happened.");
+      });
 
-
-
-
-  /**************************************/
+    });
 
 }
 window.addEventListener('load', callback);

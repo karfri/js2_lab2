@@ -19,8 +19,15 @@ var callback = function(){
     }).catch(function(error){
       alert('Something went wrong. Try to reload the page');
     });
-
   });
-}
 
+if(){
+  function logOutMessage(){
+    let p = document.createElement("p");
+    p.innerText = "You've been logged out.";
+    //let loginPopOver = document.getElementById("loginPopOver");
+    document.body.appendChild(p);
+  }
+  logOutMessage();
+}
 window.addEventListener('load', callback);
