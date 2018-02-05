@@ -21,13 +21,18 @@ var callback = function(){
     });
   });
 
-if(){
+  /*Log out message*/
+  if(document.referrer === "http://localhost:8000/js2_lab2/lab2_chat.html"){
+    logOutMessage();
+  }
+
   function logOutMessage(){
     let p = document.createElement("p");
+    p.className = "logOutMessage";
     p.innerText = "You've been logged out.";
     //let loginPopOver = document.getElementById("loginPopOver");
     document.body.appendChild(p);
   }
-  logOutMessage();
+
 }
 window.addEventListener('load', callback);

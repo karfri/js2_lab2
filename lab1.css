@@ -177,6 +177,19 @@ main{
   cursor:pointer;
   background-color:blue;
 }
+
+.logOutMessage{
+  padding: 4px;
+  width: 200px;
+  font-family: 'Josefin Sans', sans-serif;
+  transition: width 2s;
+  background-color: #01A9DB;
+  border-radius: 4px;
+  color: #f7f2f1;
+
+}
+
+
 .ms-box{
   background-color:#8ecee5;
   width:80%;

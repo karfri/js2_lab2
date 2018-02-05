@@ -112,11 +112,13 @@ function scrollToBottom(){
     localStorage.removeItem('user');
     window.location = 'index.html';
   });*/
+
+
   let logOut = document.getElementById('logOut');
     logOut.addEventListener('click', function(){
       firebase.auth().signOut().then(function() {
         // Sign-out successful.
-        console.log("Success")
+        console.log("Success");
         window.location = "index.html";
       }).catch(function(error) {
           // An error happened.
