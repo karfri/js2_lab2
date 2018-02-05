@@ -107,21 +107,17 @@ function scrollToBottom(){
    chat.scrollTop = chat.scrollHeight - chat.clientHeight;
 }
 
-/*Display profilpic and username in the right corner*/ 
-firebase.database().ref('users/').on('value', function(snapshot) {
-				let data = snapshot.val();
+/*Display profilpic and username in the right corner*/
+/*
         let userInfo = document.getElementById('userInfo');
-        for( let key in data ) {
+
           let img = document.createElement('img');
           let user = JSON.parse(data[key]);
           let name = user.name;
           let pic = user.profilepic;
           img.src = pic;
           userInfo.appendChild(img);
-          userInfo.innerHTML += name;
-        }
-});
-
+          userInfo.innerHTML += name;*/
 
 
 

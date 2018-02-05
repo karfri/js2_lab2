@@ -11,10 +11,9 @@ var callback = function(){
     .then(function(result) {
       let username = result.additionalUserInfo.profile.name;
       let pic = result.user.photoURL;
-      const user = {name: username, profilepic: pic}; // WE USE THIS CONST TO GET THE USERNAME WITH USER.NAME
+      const user = {name: username}; // WE USE THIS CONST TO GET THE USERNAME WITH USER.NAME
       let dataString = JSON.stringify( user );
       window.localStorage.setItem('user', dataString);
-      db.ref('users/').push(dataString);
       alert('Please wait, you are being redirected.');
       setTimeout(function(){
         window.location = "lab2_chat.html";
